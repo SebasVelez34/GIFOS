@@ -84,7 +84,7 @@
 }
 
 .header li a:hover, .header .menu-btn:hover {
-  background-color: #0000FF;
+  background-color: #572EE5;
   color: #fff;
 }
 
@@ -105,7 +105,7 @@
 
 .header .border {
   height: 5px;
-  background: #0000FF;
+  background: #572EE5;
 }
 
 .header .menu-icon {
@@ -116,12 +116,12 @@
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  color: #0000FF;
+  color: #572EE5;
   padding: 47px 26px 34px 0;
 }
 
 .header .menu-icon .navicon {
-  background: #0000FF;
+  background: #572EE5;
   display: block;
   height: 2px;
   position: relative;
@@ -132,7 +132,7 @@
 
 .header .menu-icon .navicon:before,
 .header .menu-icon .navicon:after {
-  background: #0000FF;
+  background: #572EE5;
   content: '';
   display: block;
   height: 100%;
@@ -196,5 +196,20 @@
   .header .menu-icon {
     display: none;
   }
+}
+
+#welcome h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 25px;
+  color: #572EE5;
+  text-align: center;
+  line-height: 33px;
+  margin: 0 auto;
+  width: 286px;
+  padding-top: 4%;
+}
+
+#welcome h1 span {
+  color: #5ED7C6;
 }
 /*# sourceMappingURL=style.css.map */

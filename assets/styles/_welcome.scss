@@ -1,0 +1,15 @@
+#welcome{
+    h1{
+        font-family: 'Montserrat', sans-serif;
+        font-size: 25px;
+        color: #572EE5;
+        text-align: center;
+        line-height: 33px;
+        margin: 0 auto;
+        width: 286px;
+        padding-top: 4%;
+        span {
+            color: $thirty-color;
+        }
+    }
+}
