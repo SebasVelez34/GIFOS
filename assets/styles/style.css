@@ -212,4 +212,88 @@
 #welcome h1 span {
   color: #5ED7C6;
 }
+
+#welcome .input-container {
+  text-align: center;
+  padding-top: 10%;
+}
+
+#welcome .input-container #img-search {
+  width: 273px;
+  height: 130px;
+}
+
+#welcome .input-container #search {
+  position: relative;
+}
+
+#welcome .input-container #search input {
+  background: #FFFFFF;
+  border: 1px solid #572EE5;
+  border-radius: 27px;
+  width: 334px;
+  height: 50px;
+  margin-top: -0.3rem;
+  font-family: "Roboto-Regular";
+  font-size: 16px;
+  color: #000000;
+  text-align: left;
+  padding: 1.2% 17.1% 1.1% 14.7%;
+}
+
+#welcome .input-container #search #img-find {
+  position: absolute;
+  right: 16%;
+  top: 22%;
+}
+
+#welcome .trending {
+  padding-top: 7%;
+}
+
+#welcome .trending h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  color: #572EE5;
+  text-align: center;
+  line-height: 25px;
+}
+
+#welcome .trending p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  color: #572EE5;
+  text-align: center;
+  line-height: 25px;
+  width: 225px;
+  margin: 0 auto;
+}
+
+#trending-GIFOS {
+  background-color: #F3F5F8;
+  margin-top: 10%;
+  padding-top: 8%;
+  height: 430px;
+}
+
+#trending-GIFOS h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  color: #572EE5;
+  text-align: center;
+  line-height: 30px;
+  padding: 1%;
+}
+
+#trending-GIFOS p {
+  padding: 1%;
+  font-family: "Roboto";
+  font-size: 16px;
+  color: #000000;
+  text-align: center;
+  line-height: 23px;
+  width: 333px;
+  height: 46px;
+  margin: 0 auto;
+}
 /*# sourceMappingURL=style.css.map */
