@@ -8,7 +8,7 @@
 #container {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: "header" "main" "footer";
+      grid-template-areas: "header" "main" "footer";
   margin: 0;
 }
 
@@ -225,6 +225,38 @@
 
 #welcome .input-container #search {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  place-items: center;
+}
+
+#welcome .input-container #search.active input {
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+#welcome .input-container #search.active #img-find {
+  left: 12%;
+  top: 4%;
+}
+
+#welcome .input-container #search.active #img-close {
+  display: block;
+  position: absolute;
+  right: 11%;
+  top: 5%;
+}
+
+#welcome .input-container #search.active #search-results {
+  display: block;
+  border-top: hidden;
+  border-bottom-right-radius: 27px;
+  border-bottom-left-radius: 27px;
 }
 
 #welcome .input-container #search input {
@@ -239,12 +271,48 @@
   color: #000000;
   text-align: left;
   padding: 1.2% 17.1% 1.1% 14.7%;
+  outline: none;
 }
 
 #welcome .input-container #search #img-find {
   position: absolute;
   right: 16%;
   top: 22%;
+}
+
+#welcome .input-container #search #img-close {
+  display: none;
+}
+
+#welcome .input-container #search #search-results {
+  height: 200px;
+  background: #FFF;
+  border: 1px solid #572EE5;
+  width: 334px;
+  margin-top: -0.3rem;
+  text-align: center;
+  display: none;
+}
+
+#welcome .input-container #search #search-results ul {
+  list-style-type: none;
+  border-top: 1px solid #9CAFC3;
+  margin: 0 7%;
+  text-align: left;
+}
+
+#welcome .input-container #search #search-results ul li {
+  margin: 4% 0;
+  font-family: 'Roboto';
+  font-weight: 300;
+  font-size: 16px;
+  color: #000000;
+}
+
+#welcome .input-container #search #search-results ul li img {
+  width: 15.8px;
+  height: 15.8px;
+  margin-right: 3.5%;
 }
 
 #welcome .trending {
@@ -267,6 +335,7 @@
   line-height: 25px;
   width: 225px;
   margin: 0 auto;
+  word-wrap: break-word;
 }
 
 #trending-GIFOS {
@@ -318,6 +387,7 @@ footer {
   width: 100%;
   height: 196px;
   color: #FFF;
+  position: relative;
 }
 
 footer h4 {
@@ -333,6 +403,10 @@ footer h4 {
 footer .border {
   height: 5px;
   background: #572EE5;
+  position: absolute;
+  bottom: 0;
+  margin: 0 auto;
+  width: 100%;
 }
 
 footer .social {
