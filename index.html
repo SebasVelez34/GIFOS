@@ -40,16 +40,17 @@
                 <p class="tags"></p>
             </div>
         </section>
-        <section class="results"></section>
+        <section id="results" class="d-none">
+            <div class="hr"></div>
+            <h1 id="result-title">Mascotas</h1>
+            <div class="container-results"></div>
+            <a href="javascript:void(0)" id="load-more">Ver más</a>
+        </section>
         <section id="trending-GIFOS">
             <h2>Trending GIFOS</h2>
             <p>Mira los últimos
                 GIFOS de nuestra comunidad.</p>
-            <div class="trending-carrousel">
-                <img src="https://cdn.pixabay.com/photo/2015/09/09/16/05/forest-931706_1280.jpg" alt="">
-                <img src="https://cdn.pixabay.com/photo/2013/07/25/01/31/sunlight-166733_1280.jpg" alt="">
-                <img src="https://cdn.pixabay.com/photo/2013/07/25/01/31/sunlight-166733_1280.jpg" alt="">
-            </div>
+            <div class="trending-carrousel"></div>
         </section>
     </main>
     <footer>
@@ -64,6 +65,7 @@
     </footer>
     <script src="./assets/js/config.js"></script>
     <script src="./assets/js/common.js"></script>
+    <script src="./assets/js/components/GIFCardMobile.js"></script>
     <script src="./assets/js/app.js"></script>
 </body>
 </html>
