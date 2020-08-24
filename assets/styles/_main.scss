@@ -164,7 +164,7 @@
 }
 
 #results{
-    margin: 8% 5%;
+    margin: 8% 3%;
     text-align: center;
     .hr{
         width: 157px;
@@ -187,11 +187,12 @@
         flex-wrap: wrap;
         justify-content: center;
         margin: 5% 0 20%;
-        gif-card-m{
+        img{
             display: flex;
             flex: 1 1 120px;
             margin: 5px;
-            width: 100%;
+            width: 156px;
+            height: 120px;
         }
     }
     #load-more{
@@ -207,5 +208,67 @@
         padding: 4% 10%;
         text-align: center;
         text-decoration: none;
+    }
+}
+
+.mobile-card{
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255,255,255,0.9);
+    opacity: 100%;
+    position: fixed;
+    overflow-y: scroll;
+    z-index: 99999;
+    #closeModal{
+        background: url('../images/close.svg');
+        position: absolute;
+        right: 9%;
+        top: 10%;
+        width: 13.8px;
+        height: 13.8px;
+    }
+    #img-container{
+        margin: 45% 7.5% 31.3% 7.7%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        #options{
+            width: 100%;
+            display: grid;
+            grid-template-columns: 70% 1fr 1fr;
+            margin-top: 4%;
+            align-items: center;
+            #gifUser{
+                font-family: 'Roboto';
+                font-size: 16px;
+                color: #000000;
+            }
+            #gifTitle{
+                font-family: $font;
+                font-weight: bold;
+                font-size: 15px;
+                color: #000000;
+            }
+            #download{
+                opacity: 0.5;
+                border: 1px solid #9CAFC3;
+                border-radius: 6px;
+                border-radius: 6px;
+                color: rgba(156,175,195,1);
+                padding: 2%;
+                img{
+                    padding: 3% 15%;
+                }
+            }
+            #like,#download{
+                margin: 0 auto;
+            }
+        }
+        #img{
+            width: 100%;
+            height: 245px;
+            object-fit: cover;
+        }
     }
 }
