@@ -122,12 +122,12 @@
 }
 
 #trending-GIFOS{
-    background-color: #F3F5F8;
+    background: var(--color-second-background);
     margin-top: 20%;
     padding-top: 8%;
     height: 430px;
     max-width: 100vw;
-    width: 100vw;
+    width: 100vw;    
     h2{
         font-family: $font;
         font-size: 20px;

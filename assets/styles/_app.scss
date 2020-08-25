@@ -2,7 +2,27 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: all .15s ease;
 }
+:root {
+    --color-page-background: #{$background-color};
+    --color-second-background: #{$secound-background-color};
+    --color-text: #{$color-text};
+    --img-logo : #{$mobile-logo};
+}
+
+.dark {
+    --color-page-background: #{$dark-background-color};
+    --color-second-background: #{$dark-secound-background-color};
+    --color-text: #{$dark-color-text};
+    --img-logo : #{$dark-mobile-logo};
+}
+  
+body{
+    background-color: var(--color-page-background);
+    color: var(--color-text);
+}
+
 #container {
     display: grid;
     grid-template-areas: "header"

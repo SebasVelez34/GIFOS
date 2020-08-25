@@ -143,6 +143,12 @@ const trending = (function(){
     }
 })();
 
+
+function handleTheme() {
+    document.body.classList.toggle('dark');
+}
+
 (function(){
     trending.init();
+    document.querySelector('#changeTheme').onclick = handleTheme;
 })();

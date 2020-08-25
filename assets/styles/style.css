@@ -3,12 +3,33 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  -webkit-transition: all .15s ease;
+  transition: all .15s ease;
+}
+
+:root {
+  --color-page-background: #FFF;
+  --color-second-background: #F3F5F8;
+  --color-text: #572EE5;
+  --img-logo: url("../images/logo-mobile.svg");
+}
+
+.dark {
+  --color-page-background: #37383C;
+  --color-second-background: #222326;
+  --color-text: #FFFFFF;
+  --img-logo: url("../images/logo-mobile-modo-noct.svg");
+}
+
+body {
+  background-color: var(--color-page-background);
+  color: var(--color-text);
 }
 
 #container {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: "header" "main" "footer";
+      grid-template-areas: "header" "main" "footer";
   margin: 0;
 }
 
@@ -31,7 +52,7 @@
 }
 
 .header {
-  background-color: #FFFFFF 100%;
+  background: var(--color-page-background);
   width: 100%;
   height: 95px;
   z-index: 3;
@@ -39,6 +60,10 @@
 
 .header #elements-header {
   width: 100%;
+}
+
+.header #elements-header img {
+  content: var(--img-logo);
 }
 
 .header .m-elements-header {
@@ -341,7 +366,7 @@
 }
 
 #trending-GIFOS {
-  background-color: #F3F5F8;
+  background: var(--color-second-background);
   margin-top: 20%;
   padding-top: 8%;
   height: 430px;
