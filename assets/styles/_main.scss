@@ -181,6 +181,15 @@
         text-align: center;
         line-height: 40px;
         margin: 8% 0 5%;
+        &.favorites{
+            font-family: $font;
+            font-weight: bold;
+            font-size: 20px;
+            color: $primary-color;
+            text-align: center;
+            line-height: 30px;
+            margin: 0;
+        }
     }
     .container-results{
         display: flex;

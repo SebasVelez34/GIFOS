@@ -410,6 +410,16 @@
   margin: 8% 0 5%;
 }
 
+#results h1.favorites {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  color: #572EE5;
+  text-align: center;
+  line-height: 30px;
+  margin: 0;
+}
+
 #results .container-results {
   display: -webkit-box;
   display: -ms-flexbox;

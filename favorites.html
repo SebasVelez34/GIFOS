@@ -18,35 +18,19 @@
             <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
             <ul class="menu">
                 <li><a href="#podcast">Modo Nocturno</a><i></i></li>
-                <li><a href="./favorites.html">Favoritos</a><i></i></li>
+                <li><a href="/favorites.html">Favoritos</a><i></i></li>
                 <li><a href="#guests">Mis GIFOS</a><i></i></li>
             </ul>
         </nav>
     </header>
     <main>
-        <section id="welcome">
-            <h1>Inspírate, busca, guarda, y crea los mejores <span>GIFOS</span></h1>
-            <div class="input-container">
-                <img src="./assets/images/ilustra_header.svg" alt="" id="img-search">
-                <div id="search">
-                    <input type="text" name="" id="searchGif" placeholder="Busca GIFOS y más">
-                    <img src="./assets/images/icon-search.svg" alt="" id="img-find">
-                    <img src="./assets/images/close.svg" alt="" id="img-close">
-                    <div id="search-results">
-                        <ul></ul>
-                    </div>
-                </div>
-            </div>
-            <div class="trending">
-                <h3>Trending:</h3>
-                <p class="tags"></p>
-            </div>
-        </section>
-        <section id="results" class="d-none">
-            <div class="hr"></div>
-            <h1 id="result-title"></h1>
+        <section id="results" class="resultsFavorites">
+            <img src="./assets/images/icon-favoritos.svg" alt="">
+            <h1 id="result-title" class="favorites">
+                Favoritos
+            </h1>
             <div class="container-results"></div>
-            <a href="javascript:void(0)" id="load-more">Ver más</a>
+            <a href="javascript:void(0)" id="load-more" class="d-none">Ver más</a>
         </section>
         <section id="trending-GIFOS">
             <h2>Trending GIFOS</h2>
@@ -68,6 +52,6 @@
     <script src="./assets/js/config.js"></script>
     <script src="./assets/js/common.js"></script>
     <script src="./assets/js/app.js"></script>
-    <script src="./assets/js/home.js"></script>
+    <script src="./assets/js/favorites.js"></script>
 </body>
 </html>
