@@ -6,6 +6,7 @@ const favorites = (function () {
         const parent    = document.querySelector('#results');
         const container = parent.querySelector('.container-results');
         userGifs.map(gif => {
+            console.log(gif);
             let { url } = gif.images.preview_webp || gif.images.original;
             let img     = document.createElement('img');
             img.src     = url;
@@ -22,7 +23,7 @@ const favorites = (function () {
 
     function pagination(length,offset,pag) {
         let pagination  = Math.ceil(length / offset);
-        if (pag <= pagination)
+        if (pag <= pagination && length > 12 )
             document.querySelector('#load-more').classList.remove('d-none');
         else
             document.querySelector('#load-more').classList.add('d-none');

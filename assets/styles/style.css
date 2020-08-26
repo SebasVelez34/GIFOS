@@ -10,15 +10,23 @@
 :root {
   --color-page-background: #FFF;
   --color-second-background: #F3F5F8;
+  --color-third-background: rgba(87, 46, 229, 0.9);
   --color-text: #572EE5;
+  --color-second-text: #000;
+  --primary-color: #572EE5;
   --img-logo: url("../images/logo-mobile.svg");
+  --img-find: url("../images/icon-search.svg");
 }
 
 .dark {
   --color-page-background: #37383C;
   --color-second-background: #222326;
+  --color-third-background: #000;
   --color-text: #FFFFFF;
+  --color-second-text: #FFF;
+  --primary-color: #000;
   --img-logo: url("../images/logo-mobile-modo-noct.svg");
+  --img-find: url("../images/icon-search-mod-noc.svg");
 }
 
 body {
@@ -29,7 +37,7 @@ body {
 #container {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: "header" "main" "footer";
+      grid-template-areas: "header" "main" "footer";
   margin: 0;
 }
 
@@ -125,12 +133,12 @@ body {
 .header .menu {
   clear: both;
   max-height: 0;
-  background: rgba(87, 46, 229, 0.9);
+  background: var(--color-third-background);
 }
 
 .header .border {
   height: 5px;
-  background: #572EE5;
+  background: var(--primary-color);
 }
 
 .header .menu-icon {
@@ -146,7 +154,7 @@ body {
 }
 
 .header .menu-icon .navicon {
-  background: #572EE5;
+  background: var(--color-text);
   display: block;
   height: 2px;
   position: relative;
@@ -157,7 +165,7 @@ body {
 
 .header .menu-icon .navicon:before,
 .header .menu-icon .navicon:after {
-  background: #572EE5;
+  background: var(--color-text);
   content: '';
   display: block;
   height: 100%;
@@ -226,7 +234,7 @@ body {
 #welcome h1 {
   font-family: "Montserrat", sans-serif;
   font-size: 25px;
-  color: #572EE5;
+  color: var(--color-text);
   text-align: center;
   line-height: 33px;
   margin: 0 auto;
@@ -266,15 +274,15 @@ body {
 }
 
 #welcome .input-container #search.active #img-find {
-  left: 12%;
+  left: 14%;
   top: 4%;
 }
 
 #welcome .input-container #search.active #img-close {
   display: block;
   position: absolute;
-  right: 11%;
-  top: 8%;
+  right: 14%;
+  top: 6%;
 }
 
 #welcome .input-container #search.active #search-results {
@@ -285,21 +293,22 @@ body {
 }
 
 #welcome .input-container #search input {
-  background: #FFFFFF;
-  border: 1px solid #572EE5;
+  background: var(--color-page-background);
+  border: 1px solid var(--color-text);
   border-radius: 27px;
   width: 334px;
   height: 50px;
   margin-top: -0.3rem;
-  font-family: "Roboto-Regular";
+  font-family: "Roboto";
   font-size: 16px;
-  color: #000000;
+  color: var(--color-second-text);
   text-align: left;
   padding: 1.2% 17.1% 1.1% 14.7%;
   outline: none;
 }
 
 #welcome .input-container #search #img-find {
+  content: var(--img-find);
   position: absolute;
   right: 16%;
   top: 22%;
@@ -313,7 +322,7 @@ body {
   height: auto;
   max-height: 200px;
   overflow-y: scroll;
-  background: #FFF;
+  background: var(--color-page-background);
   border: 1px solid #572EE5;
   width: 334px;
   margin-top: -0.3rem;
@@ -333,10 +342,11 @@ body {
   font-family: 'Roboto';
   font-weight: 300;
   font-size: 16px;
-  color: #000000;
+  color: var(--color-second-text);
 }
 
 #welcome .input-container #search #search-results ul li img {
+  content: var(--img-find);
   width: 15.8px;
   height: 15.8px;
   margin-right: 3.5%;
@@ -349,7 +359,7 @@ body {
 #welcome .trending h3 {
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
-  color: #572EE5;
+  color: var(--color-text);
   text-align: center;
   line-height: 25px;
 }
@@ -357,7 +367,7 @@ body {
 #welcome .trending p {
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
-  color: #572EE5;
+  color: var(--color-second-text);
   text-align: center;
   line-height: 25px;
   width: 225px;
@@ -377,7 +387,7 @@ body {
 #trending-GIFOS h2 {
   font-family: "Montserrat", sans-serif;
   font-size: 20px;
-  color: #572EE5;
+  color: var(--color-text);
   text-align: center;
   line-height: 30px;
   padding: 1%;
@@ -387,7 +397,7 @@ body {
   padding: 1%;
   font-family: "Roboto";
   font-size: 16px;
-  color: #000000;
+  color: var(--color-second-text);
   text-align: center;
   line-height: 23px;
   width: 333px;
@@ -487,7 +497,7 @@ body {
 .mobile-card {
   width: 100vw;
   height: 100vh;
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--color-page-background);
   opacity: 100%;
   position: fixed;
   overflow-y: scroll;
@@ -579,7 +589,7 @@ footer {
 footer h4 {
   font-family: "Montserrat", sans-serif;
   font-size: 15px;
-  color: #000000;
+  color: var(--color-second-text);
   letter-spacing: 0;
   font-weight: 400;
   margin: 10% 0 5% 0;
@@ -588,7 +598,7 @@ footer h4 {
 
 footer .border {
   height: 5px;
-  background: #572EE5;
+  background: var(--primary-color);
   position: absolute;
   bottom: 0;
   margin: 0 auto;
@@ -606,7 +616,7 @@ footer .social img {
 footer p {
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
-  color: #000000;
+  color: var(--color-second-text);
   letter-spacing: 0;
   line-height: 20px;
   text-align: center;

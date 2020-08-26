@@ -5,19 +5,24 @@ $primary-color   : #572EE5;
 $secondary-color : rgba(87,46,229,0.90);
 $thirty-color    : #5ED7C6;
 $background-color: #FFF;
-$secound-background-color: #F3F5F8;
+$second-background-color: #F3F5F8;
 $color-text : $primary-color;
-$mobile-logo : url('../images/logo-mobile.svg');
+$second-color-text : #000;
+$mobile-logo: url('../images/logo-mobile.svg');
+$icon-search: url('../images/icon-search.svg');
 
 
 
 //Dark theme
 $dark-background-color : #37383C;
-$dark-secound-background-color: #222326;
+$dark-second-background-color: #222326;
+$dark-third-background-color: #000;
 $dark-color-text : #FFFFFF;
-$dark-primary-color : #37383C;
+$dark-second-color-text : #FFF;
+$dark-primary-color : #000;
 $dark-secondary-color : #222326;
 $dark-mobile-logo : url('../images/logo-mobile-modo-noct.svg');
+$dark-icon-search: url('../images/icon-search-mod-noc.svg');
 
 
 //Font

@@ -64,12 +64,12 @@
     .menu {
         clear: both;
         max-height: 0;
-        background: $secondary-color;
+        background: var(--color-third-background);
     }
 
     .border{
         height: 5px;
-        background:$primary-color;
+        background:var(--primary-color);
     }
 
     .menu-icon {
@@ -82,7 +82,7 @@
     }
 
     .menu-icon .navicon {
-        background: $primary-color;
+        background: var(--color-text);
         display: block;
         height: 2px;
         position: relative;
@@ -91,7 +91,7 @@
     }
     .menu-icon .navicon:before,
     .menu-icon .navicon:after{
-        background: $primary-color;
+        background: var(--color-text);
         content: '';
         display: block;
         height: 100%;

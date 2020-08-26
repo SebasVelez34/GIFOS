@@ -4,7 +4,6 @@ String.prototype.toCapitalize = function() {
 function forceDownload(url, fileName){
     var xhr = new XMLHttpRequest();
     xhr.open("GET", url, true);
-    console.log(url);
     xhr.responseType = "blob";
     xhr.onload = function(){
         var urlCreator = window.URL || window.webkitURL;

@@ -5,19 +5,27 @@
     transition: all .15s ease;
 }
 :root {
-    --color-page-background: #{$background-color};
-    --color-second-background: #{$secound-background-color};
-    --color-text: #{$color-text};
-    --img-logo : #{$mobile-logo};
+    --color-page-background  : #{$background-color};
+    --color-second-background: #{$second-background-color};
+    --color-third-background : #{$secondary-color};
+    --color-text             : #{$color-text};
+    --color-second-text      : #{$second-color-text};
+    --primary-color          : #{$primary-color};
+    --img-logo               : #{$mobile-logo};
+    --img-find               : #{$icon-search};
 }
 
 .dark {
-    --color-page-background: #{$dark-background-color};
-    --color-second-background: #{$dark-secound-background-color};
-    --color-text: #{$dark-color-text};
-    --img-logo : #{$dark-mobile-logo};
+    --color-page-background  : #{$dark-background-color};
+    --color-second-background: #{$dark-second-background-color};
+    --color-third-background : #{$dark-third-background-color};
+    --color-text             : #{$dark-color-text};
+    --color-second-text      : #{$dark-second-color-text};
+    --primary-color          : #{$dark-primary-color};
+    --img-logo               : #{$dark-mobile-logo};
+    --img-find               : #{$dark-icon-search};
 }
-  
+
 body{
     background-color: var(--color-page-background);
     color: var(--color-text);
