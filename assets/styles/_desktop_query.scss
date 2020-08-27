@@ -1,0 +1,141 @@
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+@media (min-width: 1281px) {
+    
+    :root{
+        --img-logo :#{$desktop-logo};
+    }
+    
+    
+    .header {
+        li {
+            float: left;
+            margin:1%;
+            padding: 0;
+            &:nth-child(4n){
+                margin: 0 auto;
+            }
+            a {
+                color: var(--primary-color);
+                font-size: 13px;
+                &:hover{
+                    background-color: $background-color;
+                    color: var(--primary-color);
+                }
+            }
+        }
+        #elements-header{
+            height: 100%;
+            .m-elements-header{
+                margin: 18px 0 17.2px 156px;
+                width: 59px;
+                height:59px;
+            }
+            .menu {
+                clear: none;
+                float: right;
+                max-height: none;
+                margin-right: 11%;
+                width: 30%;
+                background: var(--color-page-background);
+                display: grid;
+                grid-template-columns: repeat(4,1fr);
+                height: 100%;
+                justify-content: center;
+                align-items: center;
+                grid-gap: 3%;
+                
+            }
+            li a img{
+                width: 16px;
+                height: 16px;
+                margin: 0;
+                content: url('../images/button-crear-gifo.svg');
+                background: #FFFFFF;
+                
+            }
+            #createGifo{
+                border: 1px solid #572EE5;
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                display: grid;
+                place-items: center;
+            }
+            li:nth-c
+        }
+        
+        .menu-icon {
+            display: none;
+        }
+        
+    }
+
+    main{
+        #welcome{
+            h1{
+                width: 570px;
+                font-size: 35px;
+                padding-top: 6%;
+            }
+            .input-container{
+                padding-top: 3%;
+                #img-search{
+                    width: 399px;
+                    height: 190px;
+                }
+                #searchGif{
+                    width: 551px;
+                    padding: 1% 3% 1% 3%;
+                }
+                #search{
+                    #img-find{
+                        right: 37%;
+                    }
+                    #search-results{
+                        width: 551px;
+                    }
+                    &.active{
+                        #img-find{
+                            top: 5%;
+                            left: 37%;
+                        }
+                        #img-close{
+                            right: 37%;
+                            top: 7%;
+                        }
+                    }
+                }
+            }
+            .trending{
+                padding-top: 5%;
+                h3{
+                    font-weight: bold;
+                    font-size: 18px;
+                }
+                p{
+                    font-weight: 400;
+                    font-size: 16px;
+                    text-align: center;
+                    line-height: 25px;
+                    width: 402px;
+                }
+            }
+        }
+        #trending-GIFOS{
+            margin-top: 7%;
+        }
+        #results{
+            margin: 2.5% 3%;
+            .hr{
+                width: 338px;
+            }
+            h1{
+                margin: 3% 0 5%;
+            }
+        }
+    }
+}
+  

@@ -67,9 +67,11 @@ const card = (function () {
                 if(gifs.length > 0) userGIFS.setGIF(gifs);
                 this.src = '../assets/images/icon-fav-hover.svg';
             }else{
-                userGIFS.setGIF(data);
+                gifs.push(data);
+                userGIFS.setGIF(gifs);
                 this.src = '../assets/images/icon-fav-active.svg';
             }
+            favorites.refresh();
         };
     }
 

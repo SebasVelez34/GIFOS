@@ -4,11 +4,12 @@ const home = (function () {
         clearSearch();
 
         document.querySelector('#searchGif').onkeyup = (e)=>{
-            autocomplete();
             let value = searchValue();
             if (e.key === 'Enter' && value != "") {
                 renderResults(value);
                 searchRender(false);
+            }else{
+                autocomplete();
             }
         };
     }
@@ -26,9 +27,9 @@ const home = (function () {
 
     function searchRender(show = false) {
         const parent = document.querySelector('#search');
-        parent.classList.add('active');
         show ? parent.classList.add('active') : parent.classList.remove('active');
     }
+
     async function categories() {
         return await fetch(`${API_URL}/categories?${API_KEY}`)
         .then((response) => response.json())

@@ -7,16 +7,12 @@
     z-index: 3;
     #elements-header{
         width: 100%;
-        img{
+        .m-elements-header{
+            margin: 29px 0 17.2px 22px;
             content : var(--img-logo);
+            width: 48px;
+            height: 48px;
         }
-    }
-    .m-elements-header{
-        margin: 29px 0 17.2px 22px;
-    }
-    img {
-        width: 48px;
-        height: 48px;
     }
     ul {
         margin: 0;
@@ -136,22 +132,3 @@
     }
 }
 
-
-  
-@media (min-width: 48em) {
-    .header li {
-        float: left;
-    }
-    .header li a {
-        padding: 20px 30px;
-    }
-    .header .menu {
-        clear: none;
-        float: right;
-        max-height: none;
-        margin-right: 6%;
-    }
-    .header .menu-icon {
-        display: none;
-    }
-}

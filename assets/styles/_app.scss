@@ -13,6 +13,8 @@
     --primary-color          : #{$primary-color};
     --img-logo               : #{$mobile-logo};
     --img-find               : #{$icon-search};
+    --img-close              : #{$icon-close};
+    --color-primary-white    : #{$primary-color};
 }
 
 .dark {
@@ -24,6 +26,8 @@
     --primary-color          : #{$dark-primary-color};
     --img-logo               : #{$dark-mobile-logo};
     --img-find               : #{$dark-icon-search};
+    --img-close              : #{$dark-icon-close};
+    --color-primary-white    : #{$dark-second-color-text};
 }
 
 body{

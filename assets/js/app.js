@@ -4,9 +4,7 @@ const userGIFS = (function () {
     }
 
     function setGIF(gif) {
-        let userGifs = getGIFS();
-        userGifs.push(gif);
-        localStorage.setItem('userGifs',JSON.stringify(userGifs));
+        localStorage.setItem('userGifs',JSON.stringify(gif));
     }
 
     function clear() {
