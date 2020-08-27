@@ -41,7 +41,7 @@ body {
 #container {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: "header" "main" "footer";
+      grid-template-areas: "header" "main" "footer";
   margin: 0;
 }
 
@@ -626,6 +626,10 @@ footer p {
   display: none;
 }
 
+.op-06 {
+  opacity: 0.6;
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 1px;
@@ -672,7 +676,6 @@ footer p {
   }
   .header #elements-header {
     height: 100%;
-    li: nth-c;
   }
   .header #elements-header .m-elements-header {
     margin: 18px 0 17.2px 156px;
@@ -763,7 +766,8 @@ footer p {
     width: 402px;
   }
   main #trending-GIFOS {
-    margin-top: 7%;
+    margin-top: 6%;
+    padding-top: 3%;
   }
   main #results {
     margin: 2.5% 3%;
@@ -773,6 +777,54 @@ footer p {
   }
   main #results h1 {
     margin: 3% 0 5%;
+  }
+  main #results #result-title {
+    margin: 3% 0 3%;
+  }
+  main #results .container-results {
+    margin: 5% 11% 6%;
+  }
+  main #results .container-results div {
+    margin: 5px;
+  }
+  main #results .container-results div img {
+    width: 260px;
+    height: 200px;
+    margin: 0;
+  }
+  main #results #load-more {
+    padding: 1% 2%;
+  }
+}
+
+.desktop-hover {
+  background: #572EE5;
+  position: relative;
+}
+
+.desktop-card {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.desktop-card #img-container #options div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.desktop-card #img-container #options img {
+  width: 20px;
+  height: 20px;
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  #results #result-title {
+    margin: 3% 0 3%;
   }
 }
 /*# sourceMappingURL=style.css.map */

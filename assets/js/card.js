@@ -1,7 +1,7 @@
 const card = (function () {
-    function cardFunctions(data){
+    function cardFunctions(data,target){
         const isMobile = userDevice();
-        isMobile ? mobileModal(data) : desktopHover(data);
+        isMobile ? mobileModal(data) : desktopCard(data,target);
     }
 
     function mobileModal(data) {
@@ -85,7 +85,43 @@ const card = (function () {
         }, false);
     }
 
-    function desktopHover() {
+    function desktopTemplate() {
+        const template = document.createElement('template');
+        template.innerHTML = `
+            <div class='desktop-card'>
+                <div id="img-container">
+                    <div id="options">
+                        <div id="userInfo"></div>
+                        <div>
+                            <img src="../assets/images/icon-fav-active.svg" id="like" />
+                            <a href="javascript:void(0)" id="download">
+                                <img src="../assets/images/icon-download.svg" id="" />
+                            </a>
+                            <img src="../assets/images/icon-max.svg" id="fullscreen" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        return template;
+    }
+
+    function desktopCard(data,target) {
+        let template = desktopTemplate();
+        const parent = target.parentElement;
+        parent.classList.add('desktop-hover');
+        target.classList.add('op-06');
+        if(!parent.querySelector('.desktop-card')){
+            parent.appendChild(template.content.cloneNode(true));
+        }
+        parent.onmouseleave = function() {
+            desktopCardRemove(parent);
+        }
+    }
+
+    function desktopCardRemove(target) {
+        target.classList.remove('desktop-hover');
+        target.querySelector('img').classList.remove('op-06');
     }
 
     return {

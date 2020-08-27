@@ -102,11 +102,19 @@ const home = (function () {
             data.map(gif => {
                 let { url }  = gif.images.preview_webp || gif.images.original;
                 let img     = document.createElement('img');
+                let div     = document.createElement('div');
                 img.src     = url;
-                img.onclick = ()=>{
-                    card.options(gif);
-                };
-                container.appendChild(img);
+                if(userDevice()){
+                    img.onclick = ()=>{
+                        card.options(gif);
+                    };
+                }else{
+                    img.onmouseover = function(){
+                        card.options(gif,this);
+                    };
+                }
+                div.appendChild(img);
+                container.appendChild(div);
             });
             if(data)
                 parent.querySelector('#load-more').onclick = ()=>{ renderResults(term,offset + 12); };

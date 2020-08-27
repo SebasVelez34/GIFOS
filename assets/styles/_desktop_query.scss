@@ -3,12 +3,9 @@
   ##Screen = 1281px to higher resolution desktops
 */
 @media (min-width: 1281px) {
-    
     :root{
         --img-logo :#{$desktop-logo};
     }
-    
-    
     .header {
         li {
             float: left;
@@ -46,7 +43,6 @@
                 justify-content: center;
                 align-items: center;
                 grid-gap: 3%;
-                
             }
             li a img{
                 width: 16px;
@@ -54,7 +50,6 @@
                 margin: 0;
                 content: url('../images/button-crear-gifo.svg');
                 background: #FFFFFF;
-                
             }
             #createGifo{
                 border: 1px solid #572EE5;
@@ -64,13 +59,10 @@
                 display: grid;
                 place-items: center;
             }
-            li:nth-c
         }
-        
         .menu-icon {
             display: none;
         }
-        
     }
 
     main{
@@ -124,8 +116,9 @@
                 }
             }
         }
-        #trending-GIFOS{
-            margin-top: 7%;
+        #trending-GIFOS {
+            margin-top: 6%;
+            padding-top: 3%;
         }
         #results{
             margin: 2.5% 3%;
@@ -135,7 +128,46 @@
             h1{
                 margin: 3% 0 5%;
             }
+            #result-title{
+                margin: 3% 0 3%;
+            }
+            .container-results{
+                margin: 5% 11% 6%;
+                div{
+                    margin:5px;
+                    img{
+                        width: 260px;
+                        height: 200px;
+                        margin:0;
+                    }
+                }
+            }
+            #load-more{
+                padding: 1% 2%;
+            }
         }
     }
 }
-  
+
+
+.desktop-hover{
+    background: $primary-color;
+    position: relative;
+}
+.desktop-card{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    #img-container{
+        #options{
+            div{
+                display: flex;
+                justify-content: flex-end;
+            }
+            img{
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+}
