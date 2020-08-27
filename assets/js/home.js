@@ -100,10 +100,12 @@ const home = (function () {
             parent.querySelector('#result-title').innerHTML = term;
             if (offset == 0) container.innerHTML = '';
             data.map(gif => {
-                let { url }  = gif.images.preview_webp || gif.images.original;
+                let { url } = gif.images.preview_webp || gif.images.original;
                 let img     = document.createElement('img');
                 let div     = document.createElement('div');
+                div.classList.add('img');
                 img.src     = url;
+                img.classList.add('gifImage');
                 if(userDevice()){
                     img.onclick = ()=>{
                         card.options(gif);

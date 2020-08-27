@@ -93,11 +93,11 @@ const card = (function () {
                     <div id="options">
                         <div id="userInfo"></div>
                         <div>
-                            <img src="../assets/images/icon-fav-active.svg" id="like" />
+                            <span id="like"><img src="../assets/images/icon-fav-active.svg"/></span>
                             <a href="javascript:void(0)" id="download">
                                 <img src="../assets/images/icon-download.svg" id="" />
                             </a>
-                            <img src="../assets/images/icon-max.svg" id="fullscreen" />
+                            <span id="fullscreen"><img src="../assets/images/icon-max.svg" /></span>
                         </div>
                     </div>
                 </div>
@@ -110,18 +110,62 @@ const card = (function () {
         let template = desktopTemplate();
         const parent = target.parentElement;
         parent.classList.add('desktop-hover');
-        target.classList.add('op-06');
+        target.classList.add('op-07');
         if(!parent.querySelector('.desktop-card')){
             parent.appendChild(template.content.cloneNode(true));
         }
-        parent.onmouseleave = function() {
-            desktopCardRemove(parent);
+        desktopCardOptions(data,parent);
+    }
+
+    function desktopCardOptions(data,target) {
+        target.onmouseleave = function() {
+            desktopCardRemove(target);
         }
+        desktopUserInfo(data,target);
+        desktopDownload(data,target);
+        //mobileUserInfo(data);
+        desktopLikeImg(data,target);
+        //mobileDownload(data);
     }
 
     function desktopCardRemove(target) {
         target.classList.remove('desktop-hover');
-        target.querySelector('img').classList.remove('op-06');
+        target.querySelector('img').classList.remove('op-07');
+    }
+
+    function desktopUserInfo({username,title},target) {
+        target.querySelector('#userInfo').innerHTML = `
+            <p id="gifUser">${username}</p>
+            <p id="gifTitle">${title}</p>
+        `;
+    }
+
+    function desktopLikeImg(data,target) {
+        let saved = userGIFS.getGIFS();
+        saved     = saved.find(gif => gif.id === data.id);
+        let img   = saved ? '../assets/images/icon-fav-active.svg' : '../assets/images/icon-fav-hover.svg';
+        target.querySelector('#like img').src = img;
+        target.querySelector('#like').onclick = function () {
+            let gifs   = userGIFS.getGIFS();
+            let exists = gifs.findIndex(gif => gif.id === data.id);
+            if(exists !== -1){
+                delete gifs[exists];
+                gifs = gifs.filter(Boolean);
+                userGIFS.clear();
+                if(gifs.length > 0) userGIFS.setGIF(gifs);
+                this.querySelector('img').src = '../assets/images/icon-fav-hover.svg';
+            }else{
+                gifs.push(data);
+                userGIFS.setGIF(gifs);
+                this.querySelector('img').src = '../assets/images/icon-fav-active.svg';
+            }
+        };
+    }
+
+    function desktopDownload(data,target) {
+        target.querySelector('#download img').addEventListener('click', function(ev) {
+            forceDownload(data.images.original.url,data.title);
+        }, false);
     }
 
     return {

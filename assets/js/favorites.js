@@ -10,9 +10,15 @@ const favorites = (function () {
             let { url } = gif.images.preview_webp || gif.images.original;
             let img     = document.createElement('img');
             img.src     = url;
-            img.onclick = ()=>{
-                card.options(gif);
-            };
+            if(userDevice()){
+                img.onclick = ()=>{
+                    card.options(gif);
+                };
+            }else{
+                img.onmouseover = function(){
+                    card.options(gif,this);
+                };
+            }
             container.appendChild(img);
         });
         if(userGifs)

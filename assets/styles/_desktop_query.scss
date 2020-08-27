@@ -132,8 +132,8 @@
                 margin: 3% 0 3%;
             }
             .container-results{
-                margin: 5% 11% 6%;
-                div{
+                margin: 5% 13% 6%;
+                .img{
                     margin:5px;
                     img{
                         width: 260px;
@@ -147,27 +147,60 @@
             }
         }
     }
-}
-
-
-.desktop-hover{
-    background: $primary-color;
-    position: relative;
-}
-.desktop-card{
-    position: absolute;
-    top: 0;
-    width: 100%;
-    #img-container{
-        #options{
-            div{
-                display: flex;
-                justify-content: flex-end;
-            }
-            img{
-                width: 20px;
-                height: 20px;
+    .desktop-hover{
+        background: $primary-color;
+        position: relative;
+    }
+    .desktop-card{
+        position: absolute;
+        top: 0;
+        width: 100%;
+        margin-top: 2%;
+        padding: 0;
+        height: 100%;
+        #img-container{
+            height: 100%;
+            #options{
+                height: 100%;
+                #userInfo{
+                    bottom: 10%;
+                    left: 3%;
+                    position: absolute;
+                    display: grid;
+                    text-align: left;
+                    #gifUser{
+                        font-family: 'Roboto';
+                        font-weight: 400;
+                        font-size: 15px;
+                        color: #FFFFFF;
+                    }
+                    #gifTitle{
+                        font-family: 'Roboto';
+                        font-weight: bold;
+                        font-size: 16px;
+                        color: #FFFFFF;
+                    }
+                }
+                #like,#download,#fullscreen{
+                    opacity: 0.7;
+                    background: #FFFFFF;
+                    border-radius: 6px;
+                    border-radius: 6px;
+                    margin-right: 2%;
+                    padding: 3%;
+                    cursor: pointer;
+                }
+                div{
+                    display: flex;
+                    justify-content: flex-end;
+                }
+                img{
+                    width: 18px;
+                    height: 16px;
+                }
             }
         }
     }
 }
+
+

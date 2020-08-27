@@ -41,7 +41,7 @@ body {
 #container {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: "header" "main" "footer";
+      grid-template-areas: "header" "main" "footer";
   margin: 0;
 }
 
@@ -626,8 +626,8 @@ footer p {
   display: none;
 }
 
-.op-06 {
-  opacity: 0.6;
+.op-07 {
+  opacity: 0.7;
 }
 
 /* width */
@@ -782,12 +782,12 @@ footer p {
     margin: 3% 0 3%;
   }
   main #results .container-results {
-    margin: 5% 11% 6%;
+    margin: 5% 13% 6%;
   }
-  main #results .container-results div {
+  main #results .container-results .img {
     margin: 5px;
   }
-  main #results .container-results div img {
+  main #results .container-results .img img {
     width: 260px;
     height: 200px;
     margin: 0;
@@ -795,31 +795,65 @@ footer p {
   main #results #load-more {
     padding: 1% 2%;
   }
-}
-
-.desktop-hover {
-  background: #572EE5;
-  position: relative;
-}
-
-.desktop-card {
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-
-.desktop-card #img-container #options div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-}
-
-.desktop-card #img-container #options img {
-  width: 20px;
-  height: 20px;
+  .desktop-hover {
+    background: #572EE5;
+    position: relative;
+  }
+  .desktop-card {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    margin-top: 2%;
+    padding: 0;
+    height: 100%;
+  }
+  .desktop-card #img-container {
+    height: 100%;
+  }
+  .desktop-card #img-container #options {
+    height: 100%;
+  }
+  .desktop-card #img-container #options #userInfo {
+    bottom: 10%;
+    left: 3%;
+    position: absolute;
+    display: -ms-grid;
+    display: grid;
+    text-align: left;
+  }
+  .desktop-card #img-container #options #userInfo #gifUser {
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 15px;
+    color: #FFFFFF;
+  }
+  .desktop-card #img-container #options #userInfo #gifTitle {
+    font-family: 'Roboto';
+    font-weight: bold;
+    font-size: 16px;
+    color: #FFFFFF;
+  }
+  .desktop-card #img-container #options #like, .desktop-card #img-container #options #download, .desktop-card #img-container #options #fullscreen {
+    opacity: 0.7;
+    background: #FFFFFF;
+    border-radius: 6px;
+    border-radius: 6px;
+    margin-right: 2%;
+    padding: 3%;
+    cursor: pointer;
+  }
+  .desktop-card #img-container #options div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .desktop-card #img-container #options img {
+    width: 18px;
+    height: 16px;
+  }
 }
 
 @media (min-width: 1025px) and (max-width: 1280px) {

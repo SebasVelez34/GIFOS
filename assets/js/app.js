@@ -35,7 +35,7 @@ const trending = (function(){
         const parent  = document.querySelector('.trending-carrousel');
         dataTrending().then(data =>{
             data.map(gif =>{
-                let { url } = gif.images.preview_webp;
+                let { url } = gif.images.preview_webp || gif.images.original;
                 let img     = document.createElement('img');
                 img.src     = url;
                 img.onclick = ()=>{
