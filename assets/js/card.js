@@ -163,7 +163,7 @@ const card = (function () {
     }
 
     function desktopDownload(data,target) {
-        target.querySelector('#download img').addEventListener('click', function(ev) {
+        target.querySelector('#download').addEventListener('click', function(ev) {
             forceDownload(data.images.original.url,data.title);
         }, false);
     }

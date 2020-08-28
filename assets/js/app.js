@@ -23,7 +23,7 @@ const trending = (function(){
     function __constructor(){
         trendingGIF();
     }
-    async function dataTrending(limit = 10) {
+    async function dataTrending(limit = 25) {
         return await fetch(`${API_URL}/trending?${API_KEY}&limit=${limit}`)
                             .then((response) => response.json())
                             .then(data =>{
@@ -37,14 +37,52 @@ const trending = (function(){
             data.map(gif =>{
                 let { url } = gif.images.preview_webp || gif.images.original;
                 let img     = document.createElement('img');
+                let div     = document.createElement('div');
+                div.classList.add('img');
                 img.src     = url;
-                img.onclick = ()=>{
-                    card.options(gif);
-                };
-                parent.appendChild(img);
+                img.classList.add('gifImage');
+                if(userDevice()){
+                    img.onclick = ()=>{
+                        card.options(gif);
+                    };
+                }else{
+                    img.onmouseover = function(){
+                        card.options(gif,this);
+                    };
+                }
+                div.appendChild(img);
+                parent.appendChild(div);
             });
-        })
+            carousel();
+        });
     }
+
+    function carousel() {
+        const next      = document.querySelector('.next');
+        const previous  = document.querySelector('.previous');
+        const container = document.querySelector('.trending-carrousel');
+        let imgs        = Array.from(container.querySelectorAll('img'));
+        let cont        = 3;
+
+        if(imgs.length <= 3){
+            next.classList.add('d-none');
+            return false;
+        }
+        next.onclick = ()=>{
+            imgs[cont - 3].classList.add('d-none');
+            cont++;
+            cont > 3 ? previous.classList.remove('d-none') : previous.classList.add('d-none');
+            cont === imgs.length ? next.classList.add('d-none') : previous.classList.remove('d-none');
+        }
+        previous.onclick = ()=>{
+            imgs[cont - 4].classList.remove('d-none');
+            cont--;
+            cont === 3 ? previous.classList.add('d-none') : previous.classList.remove('d-none');
+            cont === imgs.length ? next.classList.add('d-none') : next.classList.remove('d-none');
+        }
+
+    }
+
     return {
         init : __constructor,
     }
