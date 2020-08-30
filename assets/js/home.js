@@ -118,10 +118,12 @@ const home = (function () {
                 div.appendChild(img);
                 container.appendChild(div);
             });
-            if(data)
+            if(data){
+                parent.querySelector('#load-more').classList.remove('d-none');
                 parent.querySelector('#load-more').onclick = ()=>{ renderResults(term,offset + 12); };
-            else
+            }else{
                 parent.querySelector('#load-more').classList.add('d-none');
+            }       
         })
     }
 

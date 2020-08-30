@@ -53,22 +53,22 @@ const card = (function () {
     }
 
     function mobileLikeImg(data) {
-        let saved = userGIFS.getGIFS();
+        let saved = userGIFS.getGIFS('userGifs');
         saved     = saved.find(gif => gif.id === data.id);
         let img   = saved ? '../assets/images/icon-fav-active.svg' : '../assets/images/icon-fav-hover.svg'
         document.querySelector('#like').src = img;
         document.querySelector('#like').onclick = function () {
-            let gifs   = userGIFS.getGIFS();
+            let gifs   = userGIFS.getGIFS('userGifs');
             let exists = gifs.findIndex(gif => gif.id === data.id);
             if(exists !== -1){
                 delete gifs[exists];
                 gifs = gifs.filter(Boolean);
-                userGIFS.clear();
-                if(gifs.length > 0) userGIFS.setGIF(gifs);
+                userGIFS.clear('userGifs');
+                if(gifs.length > 0) userGIFS.setGIF(gifs,'userGifs');
                 this.src = '../assets/images/icon-fav-hover.svg';
             }else{
                 gifs.push(data);
-                userGIFS.setGIF(gifs);
+                userGIFS.setGIF(gifs,'userGifs');
                 this.src = '../assets/images/icon-fav-active.svg';
             }
             favorites.refresh();
@@ -113,6 +113,8 @@ const card = (function () {
         target.classList.add('op-07');
         if(!parent.querySelector('.desktop-card')){
             parent.appendChild(template.content.cloneNode(true));
+        }else{
+            parent.querySelector('.desktop-card').classList.remove('d-none');
         }
         desktopCardOptions(data,parent);
     }
@@ -123,13 +125,13 @@ const card = (function () {
         }
         desktopUserInfo(data,target);
         desktopDownload(data,target);
-        //mobileUserInfo(data);
         desktopLikeImg(data,target);
-        //mobileDownload(data);
+        desktopFullScreen(data,target);
     }
 
     function desktopCardRemove(target) {
         target.classList.remove('desktop-hover');
+        target.querySelector('.desktop-card').classList.add('d-none');
         target.querySelector('img').classList.remove('op-07');
     }
 
@@ -141,24 +143,25 @@ const card = (function () {
     }
 
     function desktopLikeImg(data,target) {
-        let saved = userGIFS.getGIFS();
+        let saved = userGIFS.getGIFS('userGifs');
         saved     = saved.find(gif => gif.id === data.id);
         let img   = saved ? '../assets/images/icon-fav-active.svg' : '../assets/images/icon-fav-hover.svg';
         target.querySelector('#like img').src = img;
         target.querySelector('#like').onclick = function () {
-            let gifs   = userGIFS.getGIFS();
+            let gifs   = userGIFS.getGIFS('userGifs');
             let exists = gifs.findIndex(gif => gif.id === data.id);
             if(exists !== -1){
                 delete gifs[exists];
                 gifs = gifs.filter(Boolean);
-                userGIFS.clear();
-                if(gifs.length > 0) userGIFS.setGIF(gifs);
+                userGIFS.clear('userGifs');
+                if(gifs.length > 0) userGIFS.setGIF(gifs,'userGifs');
                 this.querySelector('img').src = '../assets/images/icon-fav-hover.svg';
             }else{
                 gifs.push(data);
-                userGIFS.setGIF(gifs);
+                userGIFS.setGIF(gifs,'userGifs');
                 this.querySelector('img').src = '../assets/images/icon-fav-active.svg';
             }
+            favorites.refresh();
         };
     }
 
@@ -166,6 +169,39 @@ const card = (function () {
         target.querySelector('#download').addEventListener('click', function(ev) {
             forceDownload(data.images.original.url,data.title);
         }, false);
+    }
+
+    function desktopFullScreen(data,target) {
+        target.querySelector('#fullscreen').onclick = function() {
+          document.body.insertAdjacentHTML('afterbegin',`
+            <div id="containerModal">
+                <span id="closeModal"></span>
+                <div id="modalImg">
+                    <img src="${data.images.original.url}" id="modalGIF">
+                    <div id="options">
+                        <div id="userInfo">
+                            <p id="user">${data.username}</p>
+                            <p id="gifTitle">${data.title}</p>
+                        </div>
+                        <span id="like"><img src="../assets/images/icon-fav-active.svg"/></span>
+                        <a href="javascript:void(0)" id="download">
+                            <img src="../assets/images/icon-download.svg" id="" />
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+          `);
+          desktopDownload(data,document.querySelector('#containerModal'));
+          desktopLikeImg(data,document.querySelector('#containerModal'));
+          closeDesktopModal();
+        };
+    }
+    
+    function closeDesktopModal() {
+        document.querySelector('#closeModal').onclick = ()=>{
+            document.querySelector('#containerModal').remove();
+        }
     }
 
     return {

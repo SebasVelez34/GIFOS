@@ -1,14 +1,14 @@
 const userGIFS = (function () {
-    function getGIFS() {
-        return JSON.parse(localStorage.getItem('userGifs') || '[]');
+    function getGIFS(item) {
+        return JSON.parse(localStorage.getItem(item) || '[]');
     }
 
-    function setGIF(gif) {
-        localStorage.setItem('userGifs',JSON.stringify(gif));
+    function setGIF(gif,item) {
+        localStorage.setItem(item,JSON.stringify(gif));
     }
 
-    function clear() {
-        localStorage.removeItem('userGifs');
+    function clear(item) {
+        localStorage.removeItem(item);
     }
 
     return{
@@ -33,6 +33,7 @@ const trending = (function(){
 
     function trendingGIF(){
         const parent  = document.querySelector('.trending-carrousel');
+        if(!parent) return;
         dataTrending().then(data =>{
             data.map(gif =>{
                 let { url } = gif.images.preview_webp || gif.images.original;
@@ -58,24 +59,26 @@ const trending = (function(){
     }
 
     function carousel() {
+        if(userDevice()) return;
         const next      = document.querySelector('.next');
         const previous  = document.querySelector('.previous');
         const container = document.querySelector('.trending-carrousel');
-        let imgs        = Array.from(container.querySelectorAll('img'));
+        let imgs        = Array.from(container.querySelectorAll('img.gifImage'));
         let cont        = 3;
 
         if(imgs.length <= 3){
             next.classList.add('d-none');
             return false;
         }
+        next.classList.remove('d-none');
         next.onclick = ()=>{
-            imgs[cont - 3].classList.add('d-none');
+            imgs[cont - 3].parentElement.classList.add('d-none');
             cont++;
             cont > 3 ? previous.classList.remove('d-none') : previous.classList.add('d-none');
             cont === imgs.length ? next.classList.add('d-none') : previous.classList.remove('d-none');
         }
         previous.onclick = ()=>{
-            imgs[cont - 4].classList.remove('d-none');
+            imgs[cont - 4].parentElement.classList.remove('d-none');
             cont--;
             cont === 3 ? previous.classList.add('d-none') : previous.classList.remove('d-none');
             cont === imgs.length ? next.classList.add('d-none') : next.classList.remove('d-none');

@@ -7,6 +7,23 @@
     opacity: 0.7;
 }
 
+.btn{
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    color: #572EE5;
+    letter-spacing: 0;
+    text-align: center;
+    text-decoration: none;
+    width: 127px;
+    height: 50px;
+    justify-self: center;
+    margin: 2%;
+    border: 1px solid;
+    border-radius: 30px;
+    min-width: 127px;
+}
+
 /* width */
 ::-webkit-scrollbar {
     width: 1px;

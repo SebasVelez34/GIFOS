@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIFOS</title>
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body id="container">
+    <header class="header">
+        <div class="border"></div>
+        <nav id="elements-header">
+            <a href="./index.html">
+                <img alt="Logo de la página" class="m-elements-header">
+            </a>
+            <input class="menu-btn" type="checkbox" id="menu-btn" />
+            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+            <ul class="menu">
+                <li><a href="javascript:void(0)" id="changeTheme">Modo Nocturno</a><i></i></li>
+                <li><a href="./favorites.html">Favoritos</a><i></i></li>
+                <li><a href="./gifos.html">Mis GIFOS</a><i></i></li>
+                <li><a href="javascript:void(0)" class="active"><div id="createGifo"><img src="./assets/images/button-crear-gifo.svg" alt=""></div></a><i></i></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="containerCreate">
+            <div id="upload">
+                <div id="camera">
+                    <img src="./assets/images/camara.svg" alt="" id="imageCamera">
+                    <img src="./assets/images/element-luz-camara.svg" id="cameraLight"/>
+                </div>
+                <div id="containerUpload">
+                    <div class="border top-left"></div>
+                    <div class="border top-right"></div>
+                    <div class="border bottom-left"></div>
+                    <div class="border bottom-right"></div>
+                    <h1>Aquí podrás<br/> crear tus propios <span>GIFOS</span></h1>
+                    <p>¡Crea tu GIFO en sólo 3 pasos! <br/>(sólo necesitas una cámara para grabar un video)</p>
+                    <video class="d-none"></video>
+                    <div id="videoOptions" class="d-none"></div>
+                </div>
+                <img src="./assets/images/pelicula.svg" alt="" id="filmSvg">
+            </div>
+            <div id="steps">
+                <div>
+                    <ul>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                    </ul>
+                    <span id="timeRecord" class="d-none"></span>
+                </div>
+                <span class="border"></span>
+                <a href="javascript:void(0)" id="startFilm">COMENZAR</a>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <h4>Compartir en:</h4>
+        <div class="social">
+            <img src="./assets/images/icon_facebook.svg" alt="">
+            <img src="./assets/images/icon-twitter.svg" alt="">
+            <img src="./assets/images/icon_instagram.svg" alt="">
+        </div>
+        <p>© GIFOS 2020 All Rights Reserved.</p>
+        <div class="border"></div>
+    </footer>
+    <script src="./assets/js/config.js"></script>
+    <script src="./assets/js/common.js"></script>
+    <script src="./assets/js/app.js"></script>
+    <script src="./assets/js/create.js"></script>
+    <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+</body>
+</html>
