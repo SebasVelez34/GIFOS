@@ -29,7 +29,7 @@ const createGIFO = (function() {
         document.querySelectorAll('#steps ul li')[1].classList.add('active');
     }
 
-    function getStreamAndRecord () { 
+    function getStreamAndRecord () {
         navigator.mediaDevices.getUserMedia({
             audio: false,
             video: {
@@ -75,7 +75,7 @@ const createGIFO = (function() {
         document.querySelector('#timeRecord').innerHTML = 'REPETIR CAPTURA';
         document.querySelector('#timeRecord').onclick   = ()=>{ record(stream) };
     }
-    
+
     function chronometer() {
         seconds ++;
         if (seconds < 10) seconds = `0` + seconds
@@ -104,7 +104,7 @@ const createGIFO = (function() {
         document.querySelector('#containerUpload p').classList.add('upload');
         document.querySelector('#containerUpload p').innerHTML = `Estamos subiendo tu GIFO`;
         document.querySelector('#timeRecord').classList.add('d-none');
-
+        document.querySelector('#videoOptions').classList.remove('d-none');
         let form = new FormData();
         form.append('file', recorder.getBlob(), 'myGif.gif');
         form.append('username', 'sebasvlez');
@@ -117,12 +117,13 @@ const createGIFO = (function() {
         }).then(data => saveGIFO(data));
     }
 
-    function saveGIFO(data) {
-        data.then(gif =>{
-            let gifos = userGIFS.getGIFS('myGifos');
-            gifos.push(data);
-            userGIFS.setGIF(gif,'myGifos');
-        });
+    function saveGIFO({data}) {
+        document.querySelector('#containerUpload h1').classList.remove('upload');
+        document.querySelector('#containerUpload h1').classList.add('uploaded');
+        document.querySelector('#containerUpload p').innerHTML = `GIFO subido con éxito`;
+        let gifos = userGIFS.getGIFS('myGifos');
+        gifos.push(data.id);
+        userGIFS.setGIF(gifos,'myGifos');
     }
 
     return {

@@ -1,34 +1,45 @@
-const favorites = (function () {
+const gifos = (function () {
     function render(prevOffset = 0,offset = 12,pag = 1) {
-        let userGifs    = userGIFS.getGIFS('userGifs');
+        let userGifs    = userGIFS.getGIFS('myGifos');
         if(empty(userGifs)) return false;
-        pagination(userGifs.length,offset,pag);
-        userGifs        = userGifs.slice(prevOffset,offset);
-        const parent    = document.querySelector('#results');
-        const container = parent.querySelector('.container-results');
-        userGifs.map(gif => {
-            let { url } = gif.images.preview_webp || gif.images.original;
-            let img     = document.createElement('img');
-            let div     = document.createElement('div');
-            div.classList.add('img');
-            img.src     = url;
-            img.classList.add('gifImage');
-            if(userDevice()){
-                img.onclick = ()=>{
-                    card.options(gif);
-                };
-            }else{
-                img.onmouseover = function(){
-                    card.options(gif,this);
-                };
-            }
-            div.appendChild(img);
-            container.appendChild(div);
+        userGifs        = getGifos(userGifs);
+        userGifs.then(data =>{
+            pagination(data.length,offset,pag);
+            data            = data.slice(prevOffset,offset);
+            const parent    = document.querySelector('#results');
+            const container = parent.querySelector('.container-results');
+            data.map(gif => {
+                let { url } = gif.images.preview_webp || gif.images.original;
+                let img     = document.createElement('img');
+                let div     = document.createElement('div');
+                div.classList.add('img');
+                img.src     = url;
+                img.classList.add('gifImage');
+                if(userDevice()){
+                    img.onclick = ()=>{
+                        card.options(gif);
+                    };
+                }else{
+                    img.onmouseover = function(){
+                        card.options(gif,this);
+                    };
+                }
+                div.appendChild(img);
+                container.appendChild(div);
+            });
+            if(userGifs)
+                parent.querySelector('#load-more').onclick = ()=>{ render(offset,offset + 12,pag + 1); };
+            else
+                parent.querySelector('#load-more').classList.add('d-none');
         });
-        if(userGifs)
-            parent.querySelector('#load-more').onclick = ()=>{ render(offset,offset + 12,pag + 1); };
-        else
-            parent.querySelector('#load-more').classList.add('d-none');
+    }
+
+    async function getGifos(ids) {
+        return await fetch(`${API_URL}?${API_KEY}&ids=${ids.join()}`)
+                    .then((response) => response.json())
+                    .then(data =>{
+                        return data.data;
+                    });
     }
 
     function pagination(length,offset,pag) {
@@ -45,7 +56,7 @@ const favorites = (function () {
     }
 
     function empty(gifs = undefined) {
-        let userGifs   = gifs || userGIFS.getGIFS('userGifs');
+        let userGifs   = gifs || userGIFS.getGIFS('myGifos');
         if(userGifs.length === 0){
             const parent   = document.querySelector('.container-results');
             const template = emptyTemplate();
@@ -61,9 +72,8 @@ const favorites = (function () {
         const template = document.createElement('template');
         template.innerHTML = `
             <div id="emptyFavorites">
-                <img src='../assets/images/icon-fav-sin-contenido.svg' />
-                <p>"¡Guarda tu primer GIFO en Favoritos 
-                para que se muestre aquí!"</p>
+                <img src='../assets/images/icon-mis-gifos-sin-contenido.svg' />
+                <p>¡Anímate a crear tu primer GIFO!</p>
             </div>
         `;
         return template;
@@ -76,5 +86,5 @@ const favorites = (function () {
 })();
 
 (function() {
-    favorites.render();
+    gifos.render();
 })();
