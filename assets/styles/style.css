@@ -106,6 +106,10 @@ body {
   line-height: 60px;
 }
 
+.header #createGifo {
+  display: none;
+}
+
 .header .menu-btn:checked ~ .menu li i {
   width: 42px;
   background: white;
@@ -699,6 +703,9 @@ footer p {
     border-bottom: 2px solid #5ED7C6;
     background-color: transparent;
     color: var(--color-primary-white);
+  }
+  .header li #createGifo {
+    display: block;
   }
   .header #elements-header {
     height: 100%;

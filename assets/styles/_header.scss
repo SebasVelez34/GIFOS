@@ -36,6 +36,9 @@
         text-align: center;
         line-height: 60px;
     }
+    #createGifo{
+        display: none;
+    }
     .menu-btn:checked ~ .menu li i {
         width: 42px;
         background: white;
