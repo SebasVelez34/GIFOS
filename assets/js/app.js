@@ -1,4 +1,5 @@
 const userGIFS = (function () {
+    'use strict';
     function getGIFS(item) {
         return JSON.parse(localStorage.getItem(item) || '[]');
     }
@@ -20,6 +21,7 @@ const userGIFS = (function () {
 
 
 const trending = (function(){
+    'use strict';
     function __constructor(){
         trendingGIF();
     }

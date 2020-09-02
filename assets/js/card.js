@@ -1,4 +1,5 @@
 const card = (function () {
+    'use strict';
     function cardFunctions(data,target){
         const isMobile = userDevice();
         isMobile ? mobileModal(data) : desktopCard(data,target);

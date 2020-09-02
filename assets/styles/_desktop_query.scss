@@ -15,11 +15,13 @@
                 margin: 0 auto;
             }
             a {
-                color: var(--primary-color);
+                color: var(--color-primary-white);
                 font-size: 13px;
+                text-decoration: none;
                 &:hover{
-                    background-color: $background-color;
-                    color: var(--primary-color);
+                    border-bottom: 2px solid $thirty-color;
+                    background-color: transparent;
+                    color: var(--color-primary-white);
                 }
             }
         }
@@ -121,7 +123,7 @@
             padding-top: 3%;
             height: 640px;
             .trending-carrousel{
-                margin: 32px 13% 82px 13%;
+                margin: 2% 12% 0;
                 overflow-x: hidden;
                 max-height: 275px;
                 position: relative;
@@ -141,7 +143,7 @@
                 position: relative;
                 .previous{
                     position: absolute;
-                    left: 10%;
+                    left: calc(10% - 20px);
                     top: 120px;
                     width: 8px;
                     cursor: pointer;
@@ -155,7 +157,7 @@
                 }
                 .next{
                     position: absolute;
-                    right: 11%;
+                    right: calc(10% - 20px);
                     top: 120px;
                     width: 8px;
                     cursor: pointer;

@@ -1,4 +1,5 @@
 const favorites = (function () {
+    'use strict';
     function render(prevOffset = 0,offset = 12,pag = 1) {
         let userGifs    = userGIFS.getGIFS('userGifs');
         if(empty(userGifs)) return false;

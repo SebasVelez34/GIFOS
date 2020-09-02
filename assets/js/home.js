@@ -1,4 +1,5 @@
 const home = (function () {
+    'use strict';
     function __constructor(){
         categoryTags();
         clearSearch();
