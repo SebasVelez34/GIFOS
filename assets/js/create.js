@@ -1,5 +1,4 @@
 const createGIFO = (function() {
-    "use strict"
     function start() {
         document.querySelector('#startFilm').onclick = function () {
             createGIFO();
