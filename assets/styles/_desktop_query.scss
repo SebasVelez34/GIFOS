@@ -85,23 +85,22 @@
                 }
                 #searchGif{
                     width: 551px;
-                    padding: 1% 3% 1% 3%;
                 }
                 #search{
-                    #img-find{
-                        right: 37%;
+                    #containerSearch{
+                        position: relative;
                     }
                     #search-results{
                         width: 551px;
                     }
                     &.active{
                         #img-find{
-                            top: 5%;
-                            left: 37%;
+                            top: 6%;
+                            left: 7%;
                         }
                         #img-close{
-                            right: 37%;
-                            top: 7%;
+                            right: 7%;
+                            top: 8%;
                         }
                     }
                 }
